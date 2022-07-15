@@ -15,6 +15,7 @@ import { HeroeTarjetaComponent } from './components/heroeTarjeta/heroe-tarjeta.c
 import { HomeComponent } from './pages/home/home.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
 import { ListadoComponent } from './pages/listado/listado.component';
+import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ListadoComponent } from './pages/listado/listado.component';
     HomeComponent,
     ImagenPipe,
     ListadoComponent,
+    ConfirmarComponent
   ],
   imports: [FlexLayoutModule, HeroesRoutingModule, MaterialModule, CommonModule, FormsModule],
   exports: [],

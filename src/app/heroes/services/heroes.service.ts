@@ -28,11 +28,25 @@ export class HeroesService{
     }
 
     getHeroePorId(id:string):Observable<HeroeInterface>{
+        
         return this.http.get<HeroeInterface>(`${this.baseUrl}/heroes/${id}`);
     }
 
     getSugerencias(termino:string):Observable<HeroeInterface[]>{
         return this.http.get<HeroeInterface[]>(`${this.baseUrl}/heroes?q=${termino}&_limit=6`); 
     }
+
+    agregarHeroe(heroe:HeroeInterface):Observable<HeroeInterface>{
+        return this.http.post<HeroeInterface>(`${this.baseUrl}/heroes`, heroe);
+    }
+
+    actualizarHeroe(heroe:HeroeInterface):Observable<HeroeInterface>{
+        return this.http.put<HeroeInterface>(`${this.baseUrl}/heroes/${heroe.id}`, heroe);
+    }
+
+    borrarHeroe(id:string):Observable<any>{
+        return this.http.delete<HeroeInterface>(`${this.baseUrl}/heroes/${id}`);
+    }
+
 
 }
